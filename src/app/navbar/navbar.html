@@ -1,0 +1,25 @@
+
+<nav class="navbar">
+    <div class="navbar-container">
+
+        <a routerLink="" class= "navbar-logo">MyApp</a>
+
+        <button class="navbar-toggle" (click)="toggleMenu()" arai-label="Toggle navigation">
+            <span class="bar" [class.open]="isMenuOpen"></span>
+            <span class="bar" [class.open]="isMenuOpen"></span>
+            <span class="bar" [class.open]="isMenuOpen"></span>
+        </button>
+        
+        <ul class="navbar"[class.active]="isMenuOpen">
+            <li>
+                <a routerLink="" routerLinkActive="active-link" (click)="isMenuOpen = false">Home</a>
+            </li>
+            <li>
+                <a routerLink="stack" routerLinkActive="active-link" (click)="isMenuOpen = false">Stack</a>
+            </li>
+            <li>
+                <a routerLink="services" routerLinkActive="active-link" (click)="isMenuOpen = false">Services</a>
+            </li>
+        </ul>
+    </div>
+</nav>
