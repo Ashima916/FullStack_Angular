@@ -1,0 +1,79 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <!-- Header Area -->
+    <div class="login-header">
+      <a routerLink="/" class="brand-logo">MyApp</a>
+      <h1>Welcome back</h1>
+      <p>Please enter your details to sign into your account.</p>
+    </div>
+
+    <!-- Social Logins (Optional) -->
+    <!-- <div class="social-group">
+      <button type="button" class="btn btn-social">
+        <img src="https://svgrepo.com" alt="Google icon">
+        Sign in with Google
+      </button>
+    </div>
+
+    <div class="divider">
+      <span>or continue with email</span>
+    </div> -->
+
+    <!-- Core Login Form -->
+    <form (submit)="onSubmit($event)" class="login-form">
+      <!-- Email Address Field -->
+      <div class="form-control">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="you@example.com" 
+          required 
+          autocomplete="email">
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-control">
+        <div class="label-wrapper">
+          <label for="password">Password</label>
+          <a routerLink="/forgot-password" class="form-link">Forgot password?</a>
+        </div>
+        <div class="input-password-wrapper">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            id="password" 
+            name="password" 
+            placeholder="••••••••" 
+            required 
+            autocomplete="current-password">
+          <button 
+            type="button" 
+            class="toggle-password" 
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Remember Me Session Toggle -->
+      <div class="form-options">
+        <label class="checkbox-container">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          <span class="checkmark"></span>
+          Remember me for 30 days
+        </label>
+      </div>
+
+      <!-- Action Submission Button -->
+      <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+    </form>
+
+    <!-- Footer Redirect Link -->
+    <!-- <p class="login-footer">
+      Don't have an account? 
+      <a routerLink="/register" class="form-link bold">Sign up for free</a>
+    </p> -->
+  </div>
+</div>

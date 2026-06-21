@@ -194,8 +194,11 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
  
-<app-navbar></app-navbar>
+@if (!isLoginPage()) {
+  <app-navbar></app-navbar>
+}
 
-<main>
-  <router-outlet ></router-outlet>
+<main class="main-content">
+  <!-- Angular dynamically inserts your pages here -->
+  <router-outlet></router-outlet>
 </main>
